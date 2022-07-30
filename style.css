@@ -1,0 +1,110 @@
+* { margin: 0; padding: 0; }
+
+body {
+    background: #000;
+}
+
+/* Wave Animation */
+.wvC {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: -1
+}
+
+.wvS {
+    position: relative
+}
+
+.wvS .waves {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    min-height: 100px;
+    max-height: 150px
+}
+
+.wvH {
+    position: relative;
+    height: 0;
+    background: #C6DAFC;
+    animation: waveHd 7s infinite
+}
+
+.plx > use {
+    fill: #C6DAFC;
+    animation: waveMove 25s cubic-bezier(.55,.5,.45,.5) infinite
+}
+
+.plx > use:nth-child(1) {
+    opacity: .7;
+    animation-delay: -2s;
+    animation-duration: 7s
+}
+
+.plx > use:nth-child(2) {
+    opacity: .5;
+    animation-delay: -3s;
+    animation-duration: 10s
+}
+
+.plx > use:nth-child(3) {
+    opacity: .3;
+    animation-delay: -4s;
+    animation-duration: 13s
+}
+
+.plx > use:nth-child(4) {
+    opacity: 1;
+    animation-delay: -5s;
+    animation-duration: 20s
+}
+
+@media (max-width:896px) {
+    .wvH {
+        animation: waveHm 7s infinite
+    }}
+
+.drK .wvH {
+    background: #343435
+}
+
+.drK .plx > use {
+    fill: #343435
+}
+
+@keyframes waveMove {
+    0% {
+        transform: translate3d(-90px,0,0)
+    }
+
+    100% {
+        transform: translate3d(85px,0,0)
+    }}
+
+@keyframes waveHm {
+    0% {
+        height: 0
+    }
+
+    35%,65% {
+        height: 200px
+    }
+
+    100% {
+        height: 0
+    }}
+
+@keyframes waveHd {
+    0% {
+        height: 0
+    }
+
+    35%,65% {
+        height: 100px
+    }
+
+    100% {
+        height: 0
+    }}
